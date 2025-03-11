@@ -11,25 +11,31 @@ public class LinkedListGeneric<T> {
 
     public void addFirst(T data) {
         NodeGeneric<T> newNode = new NodeGeneric<>(data);
+
         if (head == null) {
             head = newNode;
             tail = newNode;
-        } else {
+        }
+        else {
             newNode.next = head;
             head = newNode;
         }
+
         size++;
     }
 
     public void addLast(T data) {
         NodeGeneric<T> newNode = new NodeGeneric<>(data);
+
         if (tail == null) {
             head = newNode;
             tail = newNode;
-        } else {
+        }
+        else {
             tail.next = newNode;
             tail = newNode;
         }
+
         size++;
     }
 
@@ -37,12 +43,15 @@ public class LinkedListGeneric<T> {
         if (head == null) {
             System.out.print("List is empty");
         }
+
         T data = head.data;
         head = head.next;
         size--;
+
         if (head == null) {
             tail = null; // List is now empty
         }
+
         return data;
     }
 
@@ -50,6 +59,7 @@ public class LinkedListGeneric<T> {
         if (head == null) {
             System.out.print("List is empty");
         }
+
         if (head == tail) {
             T data = head.data;
             head = null;
@@ -59,6 +69,7 @@ public class LinkedListGeneric<T> {
         }
 
         NodeGeneric<T> current = head;
+
         while (current.next != tail) {
             current = current.next;
         }
@@ -67,6 +78,7 @@ public class LinkedListGeneric<T> {
         tail = current;
         tail.next = null;
         size--;
+
         return data;
     }
 
@@ -74,10 +86,13 @@ public class LinkedListGeneric<T> {
         if (index < 0 || index >= size) {
             System.out.print("Index out of bounds");
         }
+
         NodeGeneric<T> current = head;
+
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
+
         return current.data;
     }
 

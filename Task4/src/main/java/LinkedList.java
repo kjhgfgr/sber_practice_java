@@ -11,38 +11,49 @@ public class LinkedList {
 
     public void addFirst(int data) {
         Node newNode = new Node(data);
+
         if (head == null) {
             head = newNode;
             tail = newNode;
-        } else {
+        }
+        else {
             newNode.next = head;
             head = newNode;
         }
+
         size++;
     }
 
     public void addLast(int data) {
+
         Node newNode = new Node(data);
+
         if (tail == null) {
             head = newNode;
             tail = newNode;
-        } else {
+        }
+        else {
             tail.next = newNode;
             tail = newNode;
         }
+
         size++;
     }
 
     public int removeFirst() {
+
         if (head == null) {
             System.out.print("List is empty");
         }
+
         int data = head.data;
         head = head.next;
         size--;
+
         if (head == null) {
             tail = null; // List is now empty
         }
+
         return data;
     }
 
@@ -50,6 +61,7 @@ public class LinkedList {
         if (head == null) {
             System.out.print("List is empty");
         }
+
         if (head == tail) {
             int data = head.data;
             head = null;
@@ -59,6 +71,7 @@ public class LinkedList {
         }
 
         Node current = head;
+
         while (current.next != tail) {
             current = current.next;
         }
@@ -67,6 +80,7 @@ public class LinkedList {
         tail = current;
         tail.next = null;
         size--;
+
         return data;
     }
 
@@ -74,10 +88,13 @@ public class LinkedList {
         if (index < 0 || index >= size) {
             System.out.print("Index out of bounds");
         }
+
         Node current = head;
+
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
+
         return current.data;
     }
 
