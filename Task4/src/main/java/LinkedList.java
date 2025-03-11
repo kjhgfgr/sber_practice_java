@@ -9,7 +9,7 @@ public class LinkedList {
         this.size = 0;
     }
 
-    public void addFirst(int data) {
+    public void addFirst(Object data) {
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -24,8 +24,7 @@ public class LinkedList {
         size++;
     }
 
-    public void addLast(int data) {
-
+    public void addLast(Object data) {
         Node newNode = new Node(data);
 
         if (tail == null) {
@@ -40,30 +39,31 @@ public class LinkedList {
         size++;
     }
 
-    public int removeFirst() {
-
+    public Object removeFirst() {
         if (head == null) {
             System.out.print("List is empty");
+            return null;
         }
 
-        int data = head.data;
+        Object data = head.data;
         head = head.next;
         size--;
 
         if (head == null) {
-            tail = null; // List is now empty
+            tail = null;
         }
 
         return data;
     }
 
-    public int removeLast() {
+    public Object removeLast() {
         if (head == null) {
             System.out.print("List is empty");
+            return null;
         }
 
         if (head == tail) {
-            int data = head.data;
+            Object data = head.data;
             head = null;
             tail = null;
             size--;
@@ -76,7 +76,7 @@ public class LinkedList {
             current = current.next;
         }
 
-        int data = tail.data;
+        Object data = tail.data;
         tail = current;
         tail.next = null;
         size--;
@@ -84,9 +84,10 @@ public class LinkedList {
         return data;
     }
 
-    public int get(int index) {
+    public Object get(int index) {
         if (index < 0 || index >= size) {
             System.out.print("Index out of bounds");
+            return null; // Возвращаем null, если индекс вне границ
         }
 
         Node current = head;
@@ -95,7 +96,7 @@ public class LinkedList {
             current = current.next;
         }
 
-        return current.data;
+        return current.data; // Возвращаем объект
     }
 
     public int size() {
