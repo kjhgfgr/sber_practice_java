@@ -39,35 +39,31 @@ public class LinkedList {
         size++;
     }
 
-    public Object removeFirst() {
+    public void removeFirst() {
         if (head == null) {
             System.out.print("List is empty");
-            return null;
+            return;
         }
 
-        Object data = head.data;
         head = head.next;
         size--;
 
         if (head == null) {
             tail = null;
         }
-
-        return data;
     }
 
-    public Object removeLast() {
+    public void removeLast() {
         if (head == null) {
             System.out.print("List is empty");
-            return null;
+            return;
         }
 
         if (head == tail) {
-            Object data = head.data;
             head = null;
             tail = null;
             size--;
-            return data;
+            return;
         }
 
         Node current = head;
@@ -76,12 +72,9 @@ public class LinkedList {
             current = current.next;
         }
 
-        Object data = tail.data;
         tail = current;
         tail.next = null;
         size--;
-
-        return data;
     }
 
     public Object get(int index) {

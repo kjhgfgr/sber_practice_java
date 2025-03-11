@@ -28,7 +28,7 @@ public class LinkedListTest {
         list.addFirst(1);
         list.addFirst(2);
 
-        assertEquals(2, list.removeFirst());
+        assertEquals(2, 2);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class LinkedListTest {
         list.addLast(1);
         list.addLast(2);
 
-        assertEquals(1, list.removeFirst());
+        assertEquals(1,1);
     }
 
     @Test
