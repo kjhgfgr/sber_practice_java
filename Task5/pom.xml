@@ -12,6 +12,7 @@
   <modules>
     <module>File</module>
     <module>GenericList</module>
+      <module>ConsoleApplication</module>
   </modules>
 
   <properties>
