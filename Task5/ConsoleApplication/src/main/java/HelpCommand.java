@@ -1,11 +1,25 @@
+import java.util.Map;
 public class HelpCommand implements Command {
+    private final Map<String, Command> commandMap;
+
+    public HelpCommand(Map<String, Command> commandMap) {
+        this.commandMap = commandMap;
+    }
 
     @Override
     public void execute() {
-        System.out.println(" date - выводит текущую дату\n" +
-                " exit - завершает работу приложения\n" +
-                " time - выводит текущее время\n" +
-                " pwd - выводит текущий рабочий каталог \n" +
-                " help - выводит список доступных команд");
+        for (Command command : commandMap.values()) {
+            System.out.println(command.getDescription());
+        }
+    }
+
+    @Override
+    public String getName() {
+        return "help";
+    }
+
+    @Override
+    public String getDescription() {
+        return "help - выводит список доступных команд";
     }
 }

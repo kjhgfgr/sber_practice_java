@@ -6,4 +6,14 @@ public class PwdCommand implements Command {
         String pwd = Paths.get("").toAbsolutePath().toString();
         System.out.println(pwd);
     }
+
+    @Override
+    public String getName() {
+        return "pwd";
+    }
+
+    @Override
+    public String getDescription() {
+        return "pwd - выводит текущий рабочий каталог";
+    }
 }

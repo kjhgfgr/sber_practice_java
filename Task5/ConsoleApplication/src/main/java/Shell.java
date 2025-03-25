@@ -7,16 +7,16 @@ public class Shell {
     private boolean running = true;
 
     public Shell() {
-        // Регистрация команд
-        registerCommand("date", new DateCommand());
-        registerCommand("time", new TimeCommand());
-        registerCommand("pwd", new PwdCommand());
-        registerCommand("exit", new ExitCommand(this));
-        registerCommand("help", new HelpCommand());
+        registerCommand(new DateCommand());
+        registerCommand(new TimeCommand());
+        registerCommand(new PwdCommand());
+        registerCommand(new ExitCommand(this));
+        registerCommand(new HelpCommand(commandMap));
     }
 
-    private void registerCommand(String name, Command command) {
-        commandMap.put(name, command);
+
+    private void registerCommand(Command command) {
+        commandMap.put(command.getName(), command);
     }
 
     public void executeCommand(String input) {

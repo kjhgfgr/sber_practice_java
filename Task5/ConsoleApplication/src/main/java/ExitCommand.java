@@ -9,4 +9,14 @@ public class ExitCommand implements Command {
     public void execute() {
         shell.exit();
     }
+
+    @Override
+    public String getName() {
+        return "exit";
+    }
+
+    @Override
+    public String getDescription() {
+        return "exit - завершает работу приложения";
+    }
 }

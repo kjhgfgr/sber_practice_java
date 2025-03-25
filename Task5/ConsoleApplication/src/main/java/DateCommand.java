@@ -8,4 +8,14 @@ public class DateCommand implements Command {
         String date = formatter.format(new Date());
         System.out.println(date);
     }
+
+    @Override
+    public String getName() {
+        return "date";
+    }
+
+    public String getDescription() {
+        return "date - выводит текущую дату";
+    }
 }
+
