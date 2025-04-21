@@ -1,15 +1,13 @@
-package command;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TimeCommand implements Command {
+public class DateCommand implements Command {
     @Override
     public void execute() {
         try {
-            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-            String time = formatter.format(new Date());
-            System.out.println(time);
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+            String date = formatter.format(new Date());
+            System.out.println(date);
         } catch (Exception e) {
             System.err.println("Ошибка: " + e.getMessage());
         }
@@ -17,11 +15,11 @@ public class TimeCommand implements Command {
 
     @Override
     public String getName() {
-        return "time";
+        return "date";
     }
 
     @Override
     public String getDescription() {
-        return "time - выводит текущее время";
+        return "date - выводит текущую дату";
     }
 }

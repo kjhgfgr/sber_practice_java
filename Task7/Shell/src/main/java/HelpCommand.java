@@ -1,5 +1,3 @@
-package command;
-
 import java.util.Map;
 
 public class HelpCommand implements Command {

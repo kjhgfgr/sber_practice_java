@@ -1,5 +1,3 @@
-package command;
-
 public class ExitCommand implements Command {
     private final Shell shell;
 

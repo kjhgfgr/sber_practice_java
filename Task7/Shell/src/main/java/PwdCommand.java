@@ -1,5 +1,3 @@
-package command;
-
 import java.nio.file.Paths;
 
 public class PwdCommand implements Command {
